@@ -38,6 +38,7 @@
             this.AccountList = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AccountName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.accountTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountList)).BeginInit();
@@ -46,11 +47,12 @@
             // CodeBox
             // 
             this.CodeBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountTableBindingSource, "Code", true));
-            this.CodeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CodeBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.CodeBox.Location = new System.Drawing.Point(275, 43);
+            this.CodeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CodeBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.CodeBox.Location = new System.Drawing.Point(275, 85);
             this.CodeBox.Multiline = true;
             this.CodeBox.Name = "CodeBox";
+            this.CodeBox.ReadOnly = true;
             this.CodeBox.Size = new System.Drawing.Size(263, 24);
             this.CodeBox.TabIndex = 1;
             this.CodeBox.Text = "Code";
@@ -68,23 +70,25 @@
             // SignatureBox
             // 
             this.SignatureBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountTableBindingSource, "Signature", true));
-            this.SignatureBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignatureBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.SignatureBox.Location = new System.Drawing.Point(275, 86);
+            this.SignatureBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignatureBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.SignatureBox.Location = new System.Drawing.Point(275, 120);
             this.SignatureBox.Multiline = true;
             this.SignatureBox.Name = "SignatureBox";
+            this.SignatureBox.ReadOnly = true;
             this.SignatureBox.Size = new System.Drawing.Size(263, 24);
             this.SignatureBox.TabIndex = 2;
             this.SignatureBox.Text = "Signature";
             // 
             // ActivateButton
             // 
-            this.ActivateButton.Location = new System.Drawing.Point(327, 125);
+            this.ActivateButton.Location = new System.Drawing.Point(325, 165);
             this.ActivateButton.Name = "ActivateButton";
             this.ActivateButton.Size = new System.Drawing.Size(159, 34);
             this.ActivateButton.TabIndex = 3;
             this.ActivateButton.Text = "Activate account";
             this.ActivateButton.UseVisualStyleBackColor = true;
+            this.ActivateButton.Click += new System.EventHandler(this.ActivateButton_Click);
             // 
             // button2
             // 
@@ -127,11 +131,23 @@
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // AccountName
+            // 
+            this.AccountName.AutoSize = true;
+            this.AccountName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountTableBindingSource, "Name", true));
+            this.AccountName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountName.Location = new System.Drawing.Point(275, 57);
+            this.AccountName.Name = "AccountName";
+            this.AccountName.Size = new System.Drawing.Size(47, 17);
+            this.AccountName.TabIndex = 8;
+            this.AccountName.Text = "Name";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 270);
+            this.Controls.Add(this.AccountName);
             this.Controls.Add(this.AccountList);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.ActivateButton);
@@ -158,6 +174,7 @@
         private System.Windows.Forms.DataGridView AccountList;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label AccountName;
     }
 }
 

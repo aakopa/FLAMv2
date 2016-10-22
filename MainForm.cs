@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32;
+
 
 namespace Freelancer_Account_Manager_v2
 {
@@ -41,7 +43,7 @@ namespace Freelancer_Account_Manager_v2
             if (File.Exists(fileName))
                 App.AccountTable.ReadXml(fileName);
             accountTableBindingSource.DataSource = App.AccountTable;
-            AccountList.Enabled = false;
+            AccountList.Enabled = true;
         }
 
         
@@ -52,7 +54,7 @@ namespace Freelancer_Account_Manager_v2
             if (File.Exists(fileName))
                 App.AccountTable.ReadXml(fileName);
             accountTableBindingSource.DataSource = App.AccountTable;
-            AccountList.Enabled = false;
+            AccountList.Enabled = true;
             
         }
 
@@ -60,6 +62,14 @@ namespace Freelancer_Account_Manager_v2
         {
             AccountManagement AccMgmtFrm = new AccountManagement(this);
             AccMgmtFrm.Show();
+        }
+
+        private void ActivateButton_Click(object sender, EventArgs e)
+        {
+            RegistryKey RegKey = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Microsoft Games\Freelancer\1.0", true);
+            RegKey.SetValue("MPAccountName", CodeBox.Text);
+            RegKey.SetValue("MPAccountNameSig", SignatureBox.Text);
+            RegKey.Close();
         }
     }
 }
