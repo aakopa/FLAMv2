@@ -38,7 +38,8 @@ namespace Freelancer_Account_Manager_v2
 
         private void EditAccount_Click(object sender, EventArgs e)
         {
-            AccountListEdit.Enabled = true;
+         
+           
 
         }
 
@@ -49,7 +50,6 @@ namespace Freelancer_Account_Manager_v2
                 accountTableBindingSource.EndEdit();
                 App.AccountTable.AcceptChanges();
                 App.AccountTable.WriteXml(string.Format("{0}//data.dat", Application.StartupPath));
-                AccountListEdit.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -77,13 +77,13 @@ namespace Freelancer_Account_Manager_v2
             if (File.Exists(fileName))
                 App.AccountTable.ReadXml(fileName);
             accountTableBindingSource.DataSource = App.AccountTable;
-            AccountListEdit.Enabled = false;
+            
         }
 
         private void Cancel_Click(object sender, EventArgs e)
         {
             accountTableBindingSource.ResetBindings(false);
-            AccountListEdit.Enabled = false;
+            
         }
 
         private void AccountListEdit_KeyDown(object sender, KeyEventArgs e)
@@ -100,5 +100,34 @@ namespace Freelancer_Account_Manager_v2
         {
             this._mainForm.RefreshDataSet();
         }
+
+        private void BrowseImages_Click(object sender, EventArgs e)
+        {
+            LoadNewImage();
+        }
+
+        private void LoadNewImage()
+        {
+            OpenFileDialog BrowserDialog = new OpenFileDialog();
+            System.Windows.Forms.DialogResult dr = BrowserDialog.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                userSelectedFilePath = BrowserDialog.FileName;
+            }
+        }
+
+        public string userSelectedFilePath
+        {
+            get
+            {
+                return ImageLocation.Text;
+            }
+            set
+            {
+                ImageLocation.Text = value;
+            }
+        }
+
+        
     }
 }

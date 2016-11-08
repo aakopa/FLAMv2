@@ -12,13 +12,14 @@
   <xs:element name="AccountDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="AccountDataSet" msprop:Generator_UserDSName="AccountDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="AccountTable" msprop:Generator_TableClassName="AccountTableDataTable" msprop:Generator_TableVarName="tableAccountTable" msprop:Generator_RowChangedName="AccountTableRowChanged" msprop:Generator_TablePropName="AccountTable" msprop:Generator_RowDeletingName="AccountTableRowDeleting" msprop:Generator_RowChangingName="AccountTableRowChanging" msprop:Generator_RowEvHandlerName="AccountTableRowChangeEventHandler" msprop:Generator_RowDeletedName="AccountTableRowDeleted" msprop:Generator_RowClassName="AccountTableRow" msprop:Generator_UserTableName="AccountTable" msprop:Generator_RowEvArgName="AccountTableRowChangeEvent">
+        <xs:element name="AccountTable" msprop:Generator_TableClassName="AccountTableDataTable" msprop:Generator_TableVarName="tableAccountTable" msprop:Generator_TablePropName="AccountTable" msprop:Generator_RowDeletingName="AccountTableRowDeleting" msprop:Generator_RowChangingName="AccountTableRowChanging" msprop:Generator_RowEvHandlerName="AccountTableRowChangeEventHandler" msprop:Generator_RowDeletedName="AccountTableRowDeleted" msprop:Generator_UserTableName="AccountTable" msprop:Generator_RowChangedName="AccountTableRowChanged" msprop:Generator_RowEvArgName="AccountTableRowChangeEvent" msprop:Generator_RowClassName="AccountTableRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
               <xs:element name="Code" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_UserColumnName="Code" type="xs:string" minOccurs="0" />
               <xs:element name="Signature" msprop:Generator_ColumnVarNameInTable="columnSignature" msprop:Generator_ColumnPropNameInRow="Signature" msprop:Generator_ColumnPropNameInTable="SignatureColumn" msprop:Generator_UserColumnName="Signature" type="xs:string" minOccurs="0" />
+              <xs:element name="Logo" msprop:Generator_ColumnVarNameInTable="columnLogo" msprop:Generator_ColumnPropNameInRow="Logo" msprop:Generator_ColumnPropNameInTable="LogoColumn" msprop:Generator_UserColumnName="Logo" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -44,6 +44,15 @@ namespace Freelancer_Account_Manager_v2
                 App.AccountTable.ReadXml(fileName);
             accountTableBindingSource.DataSource = App.AccountTable;
             AccountList.Enabled = true;
+            if(String.IsNullOrWhiteSpace(ImagePathStorage.Text))
+            {
+                pictureBox1.Visible = false;
+            }
+            else
+            {
+                pictureBox1.ImageLocation = ImagePathStorage.Text;
+            }
+            
         }
 
         
@@ -55,7 +64,15 @@ namespace Freelancer_Account_Manager_v2
                 App.AccountTable.ReadXml(fileName);
             accountTableBindingSource.DataSource = App.AccountTable;
             AccountList.Enabled = true;
-            
+            if (String.IsNullOrWhiteSpace(ImagePathStorage.Text))
+            {
+                pictureBox1.Visible = false;
+            }
+            else
+            {
+                pictureBox1.ImageLocation = ImagePathStorage.Text;
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -70,6 +87,19 @@ namespace Freelancer_Account_Manager_v2
             RegKey.SetValue("MPAccountName", CodeBox.Text);
             RegKey.SetValue("MPAccountNameSig", SignatureBox.Text);
             RegKey.Close();
+        }
+
+        private void AccountList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(ImagePathStorage.Text))
+            {
+                pictureBox1.Visible = false;
+            }
+            else
+            {
+                pictureBox1.Visible = true;
+                pictureBox1.ImageLocation = ImagePathStorage.Text;
+            }
         }
     }
 }

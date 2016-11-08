@@ -39,9 +39,12 @@
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AccountName = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ImagePathStorage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.accountTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // CodeBox
@@ -49,7 +52,7 @@
             this.CodeBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountTableBindingSource, "Code", true));
             this.CodeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CodeBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.CodeBox.Location = new System.Drawing.Point(275, 85);
+            this.CodeBox.Location = new System.Drawing.Point(275, 105);
             this.CodeBox.Multiline = true;
             this.CodeBox.Name = "CodeBox";
             this.CodeBox.ReadOnly = true;
@@ -72,7 +75,7 @@
             this.SignatureBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountTableBindingSource, "Signature", true));
             this.SignatureBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignatureBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.SignatureBox.Location = new System.Drawing.Point(275, 120);
+            this.SignatureBox.Location = new System.Drawing.Point(275, 135);
             this.SignatureBox.Multiline = true;
             this.SignatureBox.Name = "SignatureBox";
             this.SignatureBox.ReadOnly = true;
@@ -82,7 +85,7 @@
             // 
             // ActivateButton
             // 
-            this.ActivateButton.Location = new System.Drawing.Point(325, 165);
+            this.ActivateButton.Location = new System.Drawing.Point(325, 175);
             this.ActivateButton.Name = "ActivateButton";
             this.ActivateButton.Size = new System.Drawing.Size(159, 34);
             this.ActivateButton.TabIndex = 3;
@@ -115,6 +118,7 @@
             this.AccountList.ReadOnly = true;
             this.AccountList.Size = new System.Drawing.Size(241, 197);
             this.AccountList.TabIndex = 7;
+            this.AccountList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AccountList_CellClick);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -136,17 +140,39 @@
             this.AccountName.AutoSize = true;
             this.AccountName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountTableBindingSource, "Name", true));
             this.AccountName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AccountName.Location = new System.Drawing.Point(275, 57);
+            this.AccountName.Location = new System.Drawing.Point(272, 76);
             this.AccountName.Name = "AccountName";
             this.AccountName.Size = new System.Drawing.Size(47, 17);
             this.AccountName.TabIndex = 8;
             this.AccountName.Text = "Name";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(466, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(81, 81);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ImagePathStorage
+            // 
+            this.ImagePathStorage.AutoSize = true;
+            this.ImagePathStorage.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountTableBindingSource, "Logo", true));
+            this.ImagePathStorage.ForeColor = System.Drawing.SystemColors.Control;
+            this.ImagePathStorage.Location = new System.Drawing.Point(489, 248);
+            this.ImagePathStorage.Name = "ImagePathStorage";
+            this.ImagePathStorage.Size = new System.Drawing.Size(58, 13);
+            this.ImagePathStorage.TabIndex = 11;
+            this.ImagePathStorage.Text = "ImagePath";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 270);
+            this.Controls.Add(this.ImagePathStorage);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.AccountName);
             this.Controls.Add(this.AccountList);
             this.Controls.Add(this.button2);
@@ -159,6 +185,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.accountTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,6 +202,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label AccountName;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label ImagePathStorage;
     }
 }
 

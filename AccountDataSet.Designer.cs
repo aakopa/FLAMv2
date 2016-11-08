@@ -287,6 +287,8 @@ namespace Freelancer_Account_Manager_v2 {
             
             private global::System.Data.DataColumn columnSignature;
             
+            private global::System.Data.DataColumn columnLogo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AccountTableDataTable() {
@@ -354,6 +356,14 @@ namespace Freelancer_Account_Manager_v2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LogoColumn {
+                get {
+                    return this.columnLogo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -389,13 +399,14 @@ namespace Freelancer_Account_Manager_v2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AccountTableRow AddAccountTableRow(string Name, string Code, string Signature) {
+            public AccountTableRow AddAccountTableRow(string Name, string Code, string Signature, string Logo) {
                 AccountTableRow rowAccountTableRow = ((AccountTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Name,
                         Code,
-                        Signature};
+                        Signature,
+                        Logo};
                 rowAccountTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAccountTableRow);
                 return rowAccountTableRow;
@@ -429,6 +440,7 @@ namespace Freelancer_Account_Manager_v2 {
                 this.columnName = base.Columns["Name"];
                 this.columnCode = base.Columns["Code"];
                 this.columnSignature = base.Columns["Signature"];
+                this.columnLogo = base.Columns["Logo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -442,6 +454,8 @@ namespace Freelancer_Account_Manager_v2 {
                 base.Columns.Add(this.columnCode);
                 this.columnSignature = new global::System.Data.DataColumn("Signature", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSignature);
+                this.columnLogo = new global::System.Data.DataColumn("Logo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLogo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("AccountTableKey", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -649,6 +663,22 @@ namespace Freelancer_Account_Manager_v2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Logo {
+                get {
+                    try {
+                        return ((string)(this[this.tableAccountTable.LogoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Logo\' in table \'AccountTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountTable.LogoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNameNull() {
                 return this.IsNull(this.tableAccountTable.NameColumn);
             }
@@ -681,6 +711,18 @@ namespace Freelancer_Account_Manager_v2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSignatureNull() {
                 this[this.tableAccountTable.SignatureColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLogoNull() {
+                return this.IsNull(this.tableAccountTable.LogoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLogoNull() {
+                this[this.tableAccountTable.LogoColumn] = global::System.Convert.DBNull;
             }
         }
         
